@@ -49,10 +49,21 @@ public partial class SignIn : System.Web.UI.Page
                     Response.Cookies["UNAME"].Expires = DateTime.Now.AddDays(-1);
                     Response.Cookies["PWD"].Expires = DateTime.Now.AddDays(-1);
                 }
+                string Utype;
+                Utype = dt.Rows[0][5].ToString().Trim();
+
+                if(Utype=="U")
+                {
+                    Session["USERNAME"] = UserName.Text;
+                    Response.Redirect("~/UserHome.aspx");
+                }
+                if (Utype == "A")
+                {
+                    Session["USERNAME"] = UserName.Text;
+                    Response.Redirect("~/AdminHome.aspx");
+                }
 
 
-                Session["USERNAME"] = UserName.Text;
-                Response.Redirect("~/UserHome.aspx");
             }
             else
             {

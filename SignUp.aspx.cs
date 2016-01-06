@@ -23,7 +23,7 @@ public partial class SignUp : System.Web.UI.Page
                 String CS = ConfigurationManager.ConnectionStrings["MyDatabaseConnectionString1"].ConnectionString;
                 using (SqlConnection con = new SqlConnection(CS))
                 {
-                    SqlCommand cmd = new SqlCommand("insert into Users values('" + tbUname.Text + "','" + tbPass.Text + "','" + tbEmail.Text + "','" + tbName.Text + "')", con);
+                    SqlCommand cmd = new SqlCommand("insert into Users values('" + tbUname.Text + "','" + tbPass.Text + "','" + tbEmail.Text + "','" + tbName.Text + "','U')", con);
                     con.Open();
                     cmd.ExecuteNonQuery();
                     lblMsg.Text = "Registration Successfull";
