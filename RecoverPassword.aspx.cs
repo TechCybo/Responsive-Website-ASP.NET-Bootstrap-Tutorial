@@ -13,8 +13,8 @@ public partial class RecoverPassword : System.Web.UI.Page
 {
     String CS = ConfigurationManager.ConnectionStrings["MyDatabaseConnectionString1"].ConnectionString;
     String GUIDvalue;
-    int Uid;
     DataTable dt = new DataTable();
+    int Uid;
 
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -25,16 +25,26 @@ public partial class RecoverPassword : System.Web.UI.Page
             {
                 SqlCommand cmd = new SqlCommand("select * from ForgotPassRequests where id='" + GUIDvalue + "'", con);
                 con.Open();
-                SqlDataAdapter sda = new SqlDataAdapter(cmd);                
+                SqlDataAdapter sda = new SqlDataAdapter(cmd);
                 sda.Fill(dt);
-                Uid = Convert.ToInt32(dt.Rows[0][1]);
+                if (dt.Rows.Count != 0)
+                {
+                    Uid = Convert.ToInt32(dt.Rows[0][1]);
+                }
+                else
+                {
+                    lblMsg.Text = "Your Password Reset Link is Expired or Invalid !";
+                    lblMsg.ForeColor = Color.Red;
+                }
+
             }
             else
             {
                 Response.Redirect("~/Default.aspx");
             }
         }
-        if (!IsPostBack)
+
+        if(!IsPostBack)
         {
             if (dt.Rows.Count != 0)
             {
@@ -43,24 +53,29 @@ public partial class RecoverPassword : System.Web.UI.Page
                 lblPassword.Visible = true;
                 lblRetypePass.Visible = true;
                 btRecPass.Visible = true;
-                
             }
             else
             {
-                lblMsg.Text = "Your reset link is expired or Invalid !";
+                lblMsg.Text = "Your Password Reset Link is Expired or Invalid !";
                 lblMsg.ForeColor = Color.Red;
             }
         }
-        
-    }
+
+        }
 
     protected void btRecPass_Click(object sender, EventArgs e)
     {
-        using (SqlConnection con = new SqlConnection(CS))
+        if (tbNewPass.Text != "" && tbConfirmPass.Text != "" && tbNewPass.Text == tbConfirmPass.Text)
         {
-            SqlCommand cmd = new SqlCommand("update Users set Password='" + tbNewPass.Text + "' where Uid='" + Uid + "'",con);
-            con.Open();
-            cmd.ExecuteNonQuery();
+            using (SqlConnection con = new SqlConnection(CS))
+            {
+                SqlCommand cmd = new SqlCommand("update users set Password='" + tbNewPass.Text + "' where Uid='" + Uid + "'", con);
+                con.Open();
+                cmd.ExecuteNonQuery();
+                SqlCommand cmd2 = new SqlCommand("delete from ForgotPassRequests where Uid='" + Uid + "'", con);
+                cmd2.ExecuteNonQuery();
+                Response.Redirect("~/SignIn.aspx");
+            }
         }
     }
 }

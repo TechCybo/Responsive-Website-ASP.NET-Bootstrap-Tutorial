@@ -40,16 +40,17 @@ public partial class ForgotPassword : System.Web.UI.Page
                 String ToEmailAddress = dt.Rows[0][3].ToString();
                 String Username = dt.Rows[0][1].ToString();
                 String EmailBody = "Hi "+Username+ ",<br/><br/> Click the link below to reset your password <br/><br/> http://localhost:48599/RecoverPassword.aspx?Uid="+myGUID;
-                MailMessage PassRecMail = new MailMessage("youremailid@gmail.com", ToEmailAddress);
+                MailMessage PassRecMail = new MailMessage("youremail@gmail.com", ToEmailAddress);
                 PassRecMail.Body = EmailBody;
                 PassRecMail.IsBodyHtml = true;
                 PassRecMail.Subject = "Reset Password";
 
+                //SmtpClient SMTP = new SmtpClient("smtp-mail.outlook.com", 587);
                 SmtpClient SMTP = new SmtpClient("smtp.gmail.com", 587);
                 SMTP.Credentials = new NetworkCredential()
                 {
-                    UserName = "email",
-                    Password = "password"
+                    UserName = "youremail@gmail.com",
+                    Password = "youremailpassword"
                 };
                 SMTP.EnableSsl = true;
                 SMTP.Send(PassRecMail);
