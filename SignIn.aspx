@@ -56,9 +56,9 @@
                                     <li><a href="#">Denims</a></li>
                                 </ul>
                             </li>
-                            
+
                             <li class="active"><a href="SignIn.aspx">Sign In</a></li>
-                            
+
                         </ul>
                     </div>
                 </div>
