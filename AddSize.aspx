@@ -47,6 +47,45 @@
                 </div>
             </div>
         </div>
+        <h1>Size</h1>
+        <hr />
+        <div class="panel panel-default">
+            <!-- Default panel contents -->
+            <div class="panel-heading">All Size</div>
+
+            <asp:Repeater ID="rptrCategory" runat="server">
+                <HeaderTemplate>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Name</th>
+                                <th>Brand</th>
+                                <th>Category</th>
+                                <th>Sub Category</th>
+                                <th>Gender</th>
+                                <th>Edit</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                </HeaderTemplate>
+                <ItemTemplate>
+                    <tr>
+                        <th><%# Eval("SizeID") %></th>
+                        <th><%# Eval("SizeName") %></th>
+                        <th><%# Eval("Name") %></th>
+                        <th><%# Eval("CatName") %></th>
+                        <td><%# Eval("SubCatName") %></td>
+                        <td><%# Eval("GenderName") %></td>
+                        <td>Edit</td>
+                    </tr>
+                </ItemTemplate>
+                <FooterTemplate>
+                    </tbody>
+            </table>
+                </FooterTemplate>
+            </asp:Repeater>
+        </div>
     </div>
 </asp:Content>
 

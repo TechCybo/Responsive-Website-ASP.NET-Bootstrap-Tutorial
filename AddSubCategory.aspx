@@ -26,6 +26,39 @@
                 </div>
             </div>
         </div>
+          <h1>Sub Categories</h1>
+        <hr />
+        <div class="panel panel-default">
+            <!-- Default panel contents -->
+            <div class="panel-heading">All Sub Categories</div>
+
+            <asp:Repeater ID="rptrCategory" runat="server">
+                <HeaderTemplate>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Sub Category</th>
+                                <th>Category</th>
+                                <th>Edit</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                </HeaderTemplate>
+                <ItemTemplate>
+                    <tr>
+                        <th><%# Eval("SubCatID") %></th>
+                        <td><%# Eval("SubCatName") %></td>
+                        <td><%# Eval("CatName") %></td>
+                        <td>Edit</td>
+                    </tr>
+                </ItemTemplate>
+                <FooterTemplate>
+                    </tbody>
+            </table>
+                </FooterTemplate>
+            </asp:Repeater>
+        </div>
     </div>
 </asp:Content>
 

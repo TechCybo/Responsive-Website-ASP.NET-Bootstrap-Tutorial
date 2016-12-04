@@ -22,9 +22,9 @@
 </head>
 <body>
     <form id="form1" runat="server">
-    <div>
-        <!-- Navbar -->
-        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div>
+            <!-- Navbar -->
+            <div class="navbar navbar-default navbar-fixed-top" role="navigation">
                 <div class="container">
                     <div class="navbar-header">
                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -45,28 +45,35 @@
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Products<b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     <li><a href="AddProduct.aspx">Add Product</a></li>
-                                    
+
                                 </ul>
                             </li>
-                            
-                            <li><a href="#">Manage</a></li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Manage<b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="AddBrand.aspx">Add Brand</a></li>
+                                    <li><a href="AddCategory.aspx">Add Category</a></li>
+                                    <li><a href="AddSubCategory.aspx">Add Sub Category</a></li>
+                                    <li><a href="AddGender.aspx">Add Gender</a></li>
+                                    <li><a href="AddSize.aspx">Add Size</a></li>
+                                </ul>
+                            </li>
                             <li>
                                 <asp:Button ID="BtAdminLogout" runat="server" Class="btn btn-default navbar-btn" Text="Logout" OnClick="BtAdminLogout_Click" />
                             </li>
-                            
+
                         </ul>
                     </div>
                 </div>
             </div>
-        <!-- Navbar End -->
-        <div class="container">
-        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
-            
-        </asp:ContentPlaceHolder>
+            <!-- Navbar End -->
+            <div class="container">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
             </div>
-    </div>
+        </div>
     </form>
-     <!--- Footer  -->
+    <!--- Footer  -->
 
     <hr />
 
