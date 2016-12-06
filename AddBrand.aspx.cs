@@ -47,5 +47,7 @@ public partial class AddBrand : System.Web.UI.Page
             cmd.ExecuteNonQuery();
             txtBrandName.Text = string.Empty;
         }
+        BindBrandsRptr();
+
     }
 }
