@@ -1,41 +1,69 @@
-﻿.center { 
-    text-align:center;
+﻿.center {
+    text-align: center;
 }
 
-.center-page
-{
-    width:300px;
-    height:300px;
-    position:absolute;
-
-    top:-40px;
-    bottom:0;
-    left:0;
-    right:0;
-
-    margin:auto;
+.center-page {
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    top: -40px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
 }
 
-.space-vert
-{
-    margin-top:20px;
+.space-vert {
+    margin-top: 20px;
 }
 
-.footer-pos
-{
-    width:auto;
-    height:auto;
-    position:absolute;
-
-    top:600px;
-    bottom:0;
-    left:0;
-    right:0;
-
-    margin:auto;
+.footer-pos {
+    width: auto;
+    height: auto;
+    position: absolute;
+    top: 600px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
 }
 
-body{
-    padding-top:50px;
+body {
+    padding-top: 50px;
 }
 
+/*products.aspx*/
+.probrand {
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 15px;
+    text-transform: uppercase;
+    font-family: sans-serif;
+}
+
+.proName {
+    font-size: 13px;
+    line-height: 17px;
+    font-family: sans-serif;
+}
+
+.proPrice {
+    font-size: 14px;
+    line-height: 17px;
+    font-family: sans-serif;
+    font-weight: 600;
+}
+
+.proOgPrice {
+    font-size: 13px;
+    font-family: sans-serif;
+    font-weight: 400;
+    text-decoration: line-through;
+    color: gray;
+}
+.proPriceDiscount {
+    font-size: 13px;
+    font-family: sans-serif;
+    font-weight: 400;
+    color: deeppink;
+}
