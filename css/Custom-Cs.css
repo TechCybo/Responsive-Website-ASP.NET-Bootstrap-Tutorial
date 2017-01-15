@@ -67,3 +67,57 @@ body {
     font-weight: 400;
     color: deeppink;
 }
+
+/*productview*/
+.proNameView{
+    font-size: 20px;
+    line-height: 25px;
+    font-family: sans-serif;
+    font-weight: 600;
+    color:#696e80;
+}
+.proOgPriceView {
+    font-size: 15px;
+    font-family: sans-serif;
+    font-weight: 400;
+    text-decoration: line-through;
+    color: gray;
+}
+.proPriceDiscountView {
+    font-size: 15px;
+    font-family: sans-serif;
+    font-weight: 400;
+    color: deeppink;
+}
+.proPriceView {
+    font-size: 16px;
+    line-height: 17px;
+    font-family: sans-serif;
+    font-weight: 600;
+    margin-top:10px
+}
+.divDet1{
+    border-bottom: 1px dashed #D5D6D8;
+    margin-bottom: 20px;
+}
+.h5Size{
+    font-weight:600;
+}
+input[type=radio]{
+    margin-right:10px;
+    margin-left:10px;
+}
+.mainButton{
+    border-radius: 3px;
+    outline: 0;
+    margin-top: 10px;
+    margin-bottom:20px;
+    font-size: 13px;
+    min-height: 22px;
+    padding: 10px 15px;
+    min-width: 108px;
+    font-weight: 500;
+    background-color: #FF5722;
+    border: 1px solid #FF5722;
+    color: #fff;
+}
