@@ -39,45 +39,50 @@
             </div>
         </div>
         <div class="col-md-7">
-            <div class="divDet1">
-                <h1 class="proNameView">WROGN Men Blue Slim Fit Printed Casual Shirt</h1>
-                <span class="proOgPriceView">Rs. 1899</span><span class="proPriceDiscountView"> 210 OFF</span>
-                <p class="proPriceView">Rs. 1228</p>
-            </div>
-            <div>
-                <h5 class="h5Size">SIZE</h5>
-                <div>
-                    <asp:RadioButtonList ID="rblSize" runat="server" RepeatDirection="Horizontal" RepeatLayout="Flow">
-                        <asp:ListItem Value="M" Text="M"></asp:ListItem>
-                        <asp:ListItem Value="L" Text="L"></asp:ListItem>
-                        <asp:ListItem Value="XL" Text="XL"></asp:ListItem>
-                    </asp:RadioButtonList>
-                </div>
-            </div>
-            <div class="divDet1">
-                <asp:Button ID="btnAddToCart" CssClass="mainButton" runat="server" Text="ADD TO CART" />
-            </div>
-            <div class="divDet1">
-                <h5 class="h5Size">Description</h5>
-                <p>
-                    Cozy up with this in-style WROGN shirt this season. A pair of sneakers and 
-                    slim denim are the perfect additions to this 
-                    blue piece when you're going outside for a day in the park.
-                </p>
-                <h5 class="h5Size">Product Details</h5>
-                <p>
-                    Blue printed casual shirt, has a spread collar, button placket, long sleeves, curved hem.
-                </p>
-                <h5 class="h5Size">Material & Care</h5>
-                <p>
-                    100% cotton Machine-wash.
-                </p>
-            </div>
-            <div>
-                <p>Free Delivery</p>
-                <p>30 Days Returns</p>
-                <p>Cash on Delivery</p>
-            </div>
+            <asp:Repeater ID="rptrProductDetails" OnItemDataBound="rptrProductDetails_ItemDataBound" runat="server">
+                <ItemTemplate>
+                    <div class="divDet1">
+                        <h1 class="proNameView"><%#Eval("PName") %></h1>
+                        <span class="proOgPriceView"><%#Eval("PPrice") %></span><span class="proPriceDiscountView"> <%# string.Format("{0}",Convert.ToInt64(Eval("PPrice"))-Convert.ToInt64(Eval("PSelPrice"))) %> OFF</span>
+                        <p class="proPriceView"><%#Eval("PSelPrice") %></p>
+                    </div>
+                    <div>
+                        <h5 class="h5Size">SIZE</h5>
+                        <div>
+                            <asp:RadioButtonList ID="rblSize" runat="server" RepeatDirection="Horizontal" RepeatLayout="Flow">
+                            </asp:RadioButtonList>
+                        </div>
+                    </div>
+                    <div class="divDet1">
+                        <asp:Button ID="btnAddToCart" OnClick="btnAddToCart_Click" CssClass="mainButton" runat="server" Text="ADD TO CART" />
+                        <asp:Label ID="lblError" runat="server" CssClass="text-danger"></asp:Label>
+                    </div>
+                    <div class="divDet1">
+                        <h5 class="h5Size">Description</h5>
+                        <p>
+                            <%#Eval("PDescription") %>
+                        </p>
+                        <h5 class="h5Size">Product Details</h5>
+                        <p>
+                            <%#Eval("PProductDetails") %>
+                        </p>
+                        <h5 class="h5Size">Material & Care</h5>
+                        <p>
+                            <%#Eval("PMaterialCare") %>
+                        </p>
+                    </div>
+                    <div>
+                        <p><%# ((int)Eval("FreeDelivery")==1)?"Free Delivery":"" %></p>
+                        <p><%# ((int)Eval("30DayRet")==1)?"30 Days Returns":"" %></p>
+                        <p><%# ((int)Eval("COD")==1)?"Cash on Delivery":"" %></p>
+                    </div>
+
+                    <asp:HiddenField ID="hfCatID" Value='<%# Eval("PcategoryID") %>' runat="server" />
+                    <asp:HiddenField ID="hfSubCatID" Value='<%# Eval("PSubCatID") %>' runat="server" />
+                    <asp:HiddenField ID="hfGenderID" Value='<%# Eval("PGender") %>' runat="server" />
+                    <asp:HiddenField ID="hfBrandID" Value='<%# Eval("PBrandID") %>' runat="server" />
+                </ItemTemplate>
+            </asp:Repeater>
         </div>
     </div>
 </asp:Content>
