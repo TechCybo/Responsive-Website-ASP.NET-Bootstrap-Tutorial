@@ -152,6 +152,7 @@ public partial class ProductView : System.Web.UI.Page
                 CartProducts.Expires = DateTime.Now.AddDays(30);
                 Response.Cookies.Add(CartProducts);
             }
+            Response.Redirect("~/ProductView.aspx?PID=" + PID);
         }
         else
         {

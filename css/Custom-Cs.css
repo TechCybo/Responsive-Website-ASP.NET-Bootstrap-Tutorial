@@ -61,6 +61,7 @@ body {
     text-decoration: line-through;
     color: gray;
 }
+
 .proPriceDiscount {
     font-size: 13px;
     font-family: sans-serif;
@@ -69,13 +70,14 @@ body {
 }
 
 /*productview*/
-.proNameView{
+.proNameView {
     font-size: 20px;
     line-height: 25px;
     font-family: sans-serif;
     font-weight: 600;
-    color:#696e80;
+    color: #696e80;
 }
+
 .proOgPriceView {
     font-size: 15px;
     font-family: sans-serif;
@@ -83,35 +85,41 @@ body {
     text-decoration: line-through;
     color: gray;
 }
+
 .proPriceDiscountView {
     font-size: 15px;
     font-family: sans-serif;
     font-weight: 400;
     color: deeppink;
 }
+
 .proPriceView {
     font-size: 16px;
     line-height: 17px;
     font-family: sans-serif;
     font-weight: 600;
-    margin-top:10px
+    margin-top: 10px;
 }
-.divDet1{
+
+.divDet1 {
     border-bottom: 1px dashed #D5D6D8;
     margin-bottom: 20px;
 }
-.h5Size{
-    font-weight:600;
+
+.h5Size {
+    font-weight: 600;
 }
-input[type=radio]{
-    margin-right:10px;
-    margin-left:10px;
+
+input[type=radio] {
+    margin-right: 10px;
+    margin-left: 10px;
 }
-.mainButton{
+
+.mainButton {
     border-radius: 3px;
     outline: 0;
     margin-top: 10px;
-    margin-bottom:20px;
+    margin-bottom: 20px;
     font-size: 13px;
     min-height: 22px;
     padding: 10px 15px;
@@ -120,4 +128,59 @@ input[type=radio]{
     background-color: #FF5722;
     border: 1px solid #FF5722;
     color: #fff;
+}
+
+#btnCart {
+    margin-right: 6px;
+}
+
+/*Cart*/
+.proNameViewCart {
+    font-size: 15px;
+    line-height: 25px;
+    font-family: sans-serif;
+    font-weight: 600;
+    color: #696e80;
+}
+
+.removeButton {
+    border-radius: 3px;
+    outline: 0;
+    margin-top: 10px;
+    font-size: 13px;
+    min-height: 22px;
+    min-width: 90px;
+    font-weight: 500;
+    background-color: #FF5722;
+    border: 1px solid #FF5722;
+    color: #fff;
+}
+
+.priceGray {
+    font-size: 15px;
+    font-family: sans-serif;
+    font-weight: 400;
+    color: dimgray;
+}
+
+.priceGreen {
+    font-size: 15px;
+    font-family: sans-serif;
+    font-weight: 400;
+    color: #20bd99;
+}
+
+.buyNowBtn {
+    border-radius: 3px;
+    outline: 0;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-size: 13px;
+    min-height: 22px;
+    padding: 10px 15px;
+    font-weight: 500;
+    background-color: #14cda8;
+    border: 1px solid #14cda8;
+    color: #fff;
+    width: 100%;
 }
