@@ -14,10 +14,10 @@ public partial class SignIn : System.Web.UI.Page
     {
         if (!IsPostBack)
         {
-            if (Request.Cookies["UNAME"]!=null && Request.Cookies["PWD"]!=null)
+            if (Request.Cookies["UNAME"] != null && Request.Cookies["PWD"] != null)
             {
                 UserName.Text = Request.Cookies["UNAME"].Value;
-                Password.Attributes["value"]= Request.Cookies["PWD"].Value;
+                Password.Attributes["value"] = Request.Cookies["PWD"].Value;
                 CheckBox1.Checked = true;
             }
         }
@@ -28,13 +28,13 @@ public partial class SignIn : System.Web.UI.Page
         String CS = ConfigurationManager.ConnectionStrings["MyDatabaseConnectionString1"].ConnectionString;
         using (SqlConnection con = new SqlConnection(CS))
         {
-            SqlCommand cmd = new SqlCommand("select * from Users where Username='"+UserName.Text+"' and Password='"+Password.Text+"'",con);
+            SqlCommand cmd = new SqlCommand("select * from Users where Username='" + UserName.Text + "' and Password='" + Password.Text + "'", con);
             con.Open();
             SqlDataAdapter sda = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             sda.Fill(dt);
 
-            if (dt.Rows.Count!=0)
+            if (dt.Rows.Count != 0)
             {
                 if (CheckBox1.Checked)
                 {
@@ -52,10 +52,20 @@ public partial class SignIn : System.Web.UI.Page
                 string Utype;
                 Utype = dt.Rows[0][5].ToString().Trim();
 
-                if(Utype=="U")
+                if (Utype == "U")
                 {
                     Session["USERNAME"] = UserName.Text;
-                    Response.Redirect("~/UserHome.aspx");
+                    if (Request.QueryString["rurl"] != null)
+                    {
+                        if (Request.QueryString["rurl"] == "cart")
+                        {
+                            Response.Redirect("~/Cart.aspx");
+                        }
+                    }
+                    else
+                    {
+                        Response.Redirect("~/UserHome.aspx");
+                    }
                 }
                 if (Utype == "A")
                 {

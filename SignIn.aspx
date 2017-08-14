@@ -85,30 +85,30 @@
                     </div>
                 </div>
                 <div class="form-group">
-                        <div class="col-md-2"></div>                    
+                    <div class="col-md-2"></div>
                     <div class="col-md-6">
                         <asp:CheckBox ID="CheckBox1" runat="server" />
                         <asp:Label ID="Label3" runat="server" CssClass="control-label" Text="Remember me ?"></asp:Label>
                     </div>
                 </div>
-                 <div class="form-group">
-                        <div class="col-md-2"></div>                    
+                <div class="form-group">
+                    <div class="col-md-2"></div>
                     <div class="col-md-6">
                         <asp:Button ID="Button1" runat="server" Text="Login" CssClass="btn btn-default" OnClick="Button1_Click" />
                         <asp:LinkButton ID="LinkButton1" runat="server" PostBackUrl="~/SignUp.aspx">Sign Up</asp:LinkButton>
                     </div>
                 </div>
                 <div class="form-group">
-                        <div class="col-md-2"></div>                    
-                        <div class="col-md-6">
-                            <asp:LinkButton ID="lbForgotPass" runat="server" PostBackUrl="~/ForgotPassword.aspx">Forgot Password !</asp:LinkButton>
-                        </div>
+                    <div class="col-md-2"></div>
+                    <div class="col-md-6">
+                        <asp:LinkButton ID="lbForgotPass" runat="server" PostBackUrl="~/ForgotPassword.aspx">Forgot Password !</asp:LinkButton>
+                    </div>
                 </div>
                 <div class="form-group">
-                    <div class="col-md-2"></div>                    
+                    <div class="col-md-2"></div>
                     <div class="col-md-6">
                         <asp:Label ID="lblError" runat="server" CssClass="text-danger"></asp:Label>
-                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -131,7 +131,7 @@
 
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="js/jquery-3.2.1.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
 </body>

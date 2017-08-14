@@ -107,6 +107,13 @@ public partial class Cart : System.Web.UI.Page
 
     protected void btnBuyNow_Click(object sender, EventArgs e)
     {
-
+        if (Session["USERNAME"] != null)
+        {
+            Response.Redirect("~/Payment.aspx");
+        }
+        else
+        {
+            Response.Redirect("~/SignIn.aspx?rurl=cart");
+        }
     }
 }
