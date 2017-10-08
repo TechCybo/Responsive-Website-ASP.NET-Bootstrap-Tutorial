@@ -36,6 +36,9 @@ public partial class SignIn : System.Web.UI.Page
 
             if (dt.Rows.Count != 0)
             {
+                Session["USERID"] = dt.Rows[0]["Uid"].ToString();
+                Session["USEREMAIL"] = dt.Rows[0]["Email"].ToString();
+
                 if (CheckBox1.Checked)
                 {
                     Response.Cookies["UNAME"].Value = UserName.Text;

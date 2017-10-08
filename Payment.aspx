@@ -3,6 +3,12 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
+    <asp:HiddenField ID="hdCartAmount" runat="server" />
+    <asp:HiddenField ID="hdCartDiscount" runat="server" />
+    <asp:HiddenField ID="hdTotalPayed" runat="server" />
+    <asp:HiddenField ID="hdPidSizeID" runat="server" />
+
+
     <div style="padding-top: 20px;">
         <div class="col-md-9">
             <div class="form-horizontal">
@@ -36,17 +42,17 @@
                 <h5 class="proNameViewCart">PRICE DETAILS</h5>
                 <div>
                     <label>Cart Total</label>
-                    <span class="pull-right priceGray" id="spanCartTotal" runat="server">2500.00</span>
+                    <span class="pull-right priceGray" id="spanCartTotal" runat="server"></span>
                 </div>
                 <div>
                     <label>Cart Discount</label>
-                    <span class="pull-right priceGreen" id="spanDiscount" runat="server">400.00</span>
+                    <span class="pull-right priceGreen" id="spanDiscount" runat="server"></span>
                 </div>
             </div>
             <div>
                 <div class="proPriceView">
                     <label>Total</label>
-                    <span class="pull-right" id="spanTotal" runat="server">2100.00</span>
+                    <span class="pull-right" id="spanTotal" runat="server"></span>
                 </div>
             </div>
         </div>
@@ -63,6 +69,7 @@
                 <div id="wallets" class="tab-pane fade in active">
                     <h3>HOME</h3>
                     <p>Some content.</p>
+                    <asp:Button ID="btnPaytm" OnClick="btnPaytm_Click" runat="server" Text="Pay with Paytm" />
                 </div>
                 <div id="cards" class="tab-pane fade">
                     <h3>Menu 1</h3>
