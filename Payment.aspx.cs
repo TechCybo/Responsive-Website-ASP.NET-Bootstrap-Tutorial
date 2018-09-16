@@ -99,9 +99,7 @@ public partial class Payment : System.Web.UI.Page
             string USERID = Session["USERID"].ToString();
             string PaymentType = "Paytm";
             string PaymentStatus = "NotPaid";
-            DateTime DateofPurchase = DateTime.Now;
             string EMAILID = Session["USEREMAIL"].ToString();
-            string CallbackURL = "http://www.callback.aspx";
 
             //Insert Data to tblPurchase
             String CS = ConfigurationManager.ConnectionStrings["MyDatabaseConnectionString1"].ConnectionString;
@@ -109,10 +107,11 @@ public partial class Payment : System.Web.UI.Page
             {
                 SqlCommand cmd = new SqlCommand("insert into tblPurchase values('" + USERID + "','"
                     + hdPidSizeID.Value + "','" + hdCartAmount.Value + "','" + hdCartDiscount.Value + "','"
-                    + hdTotalPayed.Value + "','" + PaymentType + "','" + PaymentStatus + "','" + DateofPurchase + "','"
+                    + hdTotalPayed.Value + "','" + PaymentType + "','" + PaymentStatus + "',getdate(),'"
                     + txtName.Text + "','" + txtAddress.Text + "','" + txtPinCode.Text + "','" + txtMobileNumber.Text + "') select SCOPE_IDENTITY()", con);
                 con.Open();
                 Int64 PurchaseID = Convert.ToInt64(cmd.ExecuteScalar());
+                string CallbackURL = "http://localhost:48599/Callback.aspx";
 
                 PaytmPayment(EMAILID, txtMobileNumber.Text, USERID, PurchaseID.ToString(), hdTotalPayed.Value, CallbackURL);
             }
@@ -124,12 +123,12 @@ public partial class Payment : System.Web.UI.Page
     }
     public void PaytmPayment(string EMAIL, string MOBILE_NO, string CUST_ID, string ORDER_ID, string TXN_AMOUNT, string CALLBACK_URL)
     {
-        String merchantKey = "MPcGd0fT%jAgggD5A";
+        String merchantKey = "MPcGd0ghcT%jAOghhgUD5A";
         Dictionary<string, string> parameters = new Dictionary<string, string>();
-        parameters.Add("MID", "TecheCr407945546f43273");
+        parameters.Add("MID", "TechCyghhgfhgfh4079455gb4643273");
         parameters.Add("CHANNEL_ID", "WEB");
         parameters.Add("INDUSTRY_TYPE_ID", "Retail");
-        parameters.Add("WEBSITE", "WEB_STAGING");
+        parameters.Add("WEBSITE", "WEBSTAGING");
         parameters.Add("EMAIL", EMAIL);
         parameters.Add("MOBILE_NO", MOBILE_NO);
         parameters.Add("CUST_ID", CUST_ID);
