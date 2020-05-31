@@ -1,0 +1,41 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30011.22
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Responsive-Website-ASP.NET-Bootstrap-Tutorial(1)", ".", "{9A6BC526-43AA-4B21-B13C-5951C8E22C61}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_1745"
+		Debug.AspNetCompiler.PhysicalPath = "..\Responsive-Website-ASP.NET-Bootstrap-Tutorial\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_1745\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_1745"
+		Release.AspNetCompiler.PhysicalPath = "..\Responsive-Website-ASP.NET-Bootstrap-Tutorial\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_1745\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "1745"
+		SlnRelativePath = "..\Responsive-Website-ASP.NET-Bootstrap-Tutorial\"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9A6BC526-43AA-4B21-B13C-5951C8E22C61}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A6BC526-43AA-4B21-B13C-5951C8E22C61}.Debug|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {47DF8749-A4C6-475B-8737-E3314BF20D20}
+	EndGlobalSection
+EndGlobal
