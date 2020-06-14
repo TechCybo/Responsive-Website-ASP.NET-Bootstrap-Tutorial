@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>Home</title>
-   <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/jquery-3.2.1.min.js"></script>
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet" />
     <link href="css/Custom-Cs.css" rel="stylesheet" />
@@ -30,55 +30,55 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            <div class="navbar navbar-default navbar-fixed-top" role="navigation">
-                <div class="container">
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
+
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <a class="navbar-brand" href="#">
+                    <img alt="Logo" src="Images/tc only 512.png" height="30" />
+                    TechCybo.com
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="Default.aspx">Home <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Contact</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="Products.aspx" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">All Products
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="#">Shirts</a>
+                                <a class="dropdown-item" href="#">Pants</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Mobile Phones</a>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="form-inline my-2 my-lg-0">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+
+                        <button id="btnCart" class="btn btn-primary navbar-btn ml-2" type="button">
+                            Cart <span class="badge" id="pCount" runat="server"></span>
                         </button>
-                        <a class="navbar-brand" href="Default.aspx"><span>
-                            <img alt="Logo" src="Images/tc only 512.png" height="30" /></span>TecyCybo</a>
                     </div>
-                    <div class="navbar-collapse collapse">
-                        <ul class="nav navbar-nav navbar-right">
-                            <li class="active"><a href="Default.aspx">Home</a></li>
-                            <li><a href="#">About</a></li>
-                            <li><a href="#">Contact</a></li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Products<b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="Products.aspx">All Products</a></li>
-                                    <li role="separator" class="divider"></li>
-                                    <li class="dropdown-header">Men</li>
-                                    <li role="separator" class="divider"></li>
-                                    <li><a href="#">Shirts</a></li>
-                                    <li><a href="#">Pants</a></li>
-                                    <li><a href="#">Denims</a></li>
-                                    <li role="separator" class="divider"></li>
-                                    <li class="dropdown-header">Women</li>
-                                    <li role="separator" class="divider"></li>
-                                    <li><a href="#">Top</a></li>
-                                    <li><a href="#">Leggings</a></li>
-                                    <li><a href="#">Denims</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <button id="btnCart" class="btn btn-primary navbar-btn" type="button">
-                                    Cart <span class="badge" id="pCount" runat="server"></span>
-                                </button>
-                            </li>
-                            <li id="btnSignup" runat="server"><a href="SignUp.aspx">Sign Up</a></li>
-                            <li id="btnSignin" runat="server"><a href="SignIn.aspx">Sign In</a></li>
-                            <li>
-                                <asp:Button ID="btnSignOut" runat="server" Class="btn btn-default navbar-btn" Text="Sign out" OnClick="btnSignOut_Click" />
-                            </li>
-                        </ul>
-                    </div>
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item" id="btnSignup" runat="server"><a class="nav-link" href="SignUp.aspx">Sign Up</a></li>
+                        <li class="nav-item" id="btnSignin" runat="server"><a class="nav-link" href="SignIn.aspx">Sign In</a></li>
+                        <li class="nav-item">
+                            <asp:Button ID="btnSignOut" runat="server" Class="btn btn-default nav-link" Text="Sign out" OnClick="btnSignOut_Click" />
+                        </li>
+                    </ul>
                 </div>
-            </div>
+            </nav>
 
             <!--- Carousel -->
 
@@ -171,7 +171,7 @@
         <!--- Footer -->
 
     </form>
-    
+
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
 </body>

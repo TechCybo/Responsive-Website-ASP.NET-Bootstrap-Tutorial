@@ -23,7 +23,47 @@
     <form id="form1" runat="server">
         <div>
             <!-- Navbar -->
-            <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <a class="navbar-brand" href="#">
+                    <img alt="Logo" src="Images/tc only 512.png" height="30" />
+                    TechCybo.com
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="AdminHome.aspx">Home <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Products
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="AddProduct.aspx">Add Product</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Manage
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="AddBrand.aspx">Add Brand</a>
+                                <a class="dropdown-item" href="AddCategory.aspx">Add Category</a>
+                                <a class="dropdown-item" href="AddSubCategory.aspx">Add Sub Category</a>
+                                <a class="dropdown-item" href="AddGender.aspx">Add Gender</a>
+                                <a class="dropdown-item" href="AddSize.aspx">Add Size</a>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="form-inline my-2 my-lg-0">
+                        <asp:Button ID="BtAdminLogout" runat="server" Class="btn btn-default nav-link" Text="Sign out" OnClick="BtAdminLogout_Click" />
+                    </div>
+                </div>
+            </nav>
+
+            <%--<div class="navbar navbar-default navbar-fixed-top" role="navigation">
                 <div class="container">
                     <div class="navbar-header">
                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -64,7 +104,7 @@
                         </ul>
                     </div>
                 </div>
-            </div>
+            </div>--%>
             <!-- Navbar End -->
             <div class="container">
                 <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
@@ -87,7 +127,7 @@
 
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-   <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/jquery-3.2.1.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
 </body>
