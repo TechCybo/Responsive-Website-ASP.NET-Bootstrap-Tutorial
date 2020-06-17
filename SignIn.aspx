@@ -129,7 +129,7 @@
 
     <footer>
         <div class="container">
-            <p class="pull-right"><a href="#">Back to top</a></p>
+            <p class="float-right"><a href="#">Back to top</a></p>
             <p>&copy; 2015 TechCybo.com &middot; <a href="Default.aspx">Home</a> &middot; <a href="#">About</a> &middot; <a href="#">Contact</a> &middot; <a href="#">Products</a></p>
         </div>
     </footer>
