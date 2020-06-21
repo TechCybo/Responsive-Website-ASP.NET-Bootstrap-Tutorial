@@ -90,7 +90,7 @@
                 <div class="form-group">
                     <div class="col-md-2"></div>
                     <div class="col-md-6">
-                        <asp:Button ID="btRecPass" runat="server" CssClass="btn btn-default" Text="Reset" Visible="False" OnClick="btRecPass_Click" />
+                        <asp:Button ID="btRecPass" runat="server" CssClass="btn btn-primary" Text="Reset" Visible="False" OnClick="btRecPass_Click" />
                     </div>
                 </div>
             </div>

@@ -80,7 +80,7 @@
                 <div class="form-group">
                     <div class="col-md-2"></div>
                     <div class="col-md-6">
-                        <asp:Button ID="btPassRec" runat="server" CssClass="btn btn-default" Text="Send" OnClick="btPassRec_Click" />
+                        <asp:Button ID="btPassRec" runat="server" CssClass="btn btn-primary" Text="Send" OnClick="btPassRec_Click" />
                         <asp:Label ID="lblPassRec" runat="server"></asp:Label>
                     </div>
                 </div>

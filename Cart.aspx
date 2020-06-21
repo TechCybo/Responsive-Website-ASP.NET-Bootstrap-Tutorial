@@ -3,16 +3,16 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
-    <div style="padding-top: 20px;">
+    <div class="row" style="padding-top: 20px;">
         <div class="col-md-9">
             <h5 class="proNameViewCart" runat="server" id="h5NoItems"></h5>
 
             <asp:Repeater ID="rptrCartProducts" runat="server">
                 <ItemTemplate>
-                    <div class="media" style="border: 1px solid #eaeaec;">
-                        <div class="media-left">
+                    <div class="media my-3" style="border: 1px solid #eaeaec;">
+                        <div class="align-self-center mr-3">
                             <a href="ProductView.aspx?PID=<%#Eval("PID") %>" target="_blank">
-                                <img width="100px" class="media-object" src="Images/ProductImages/<%#Eval("PID") %>/<%#Eval("Name") %><%#Eval("Extention") %>" alt="<%#Eval("Name") %>" onerror="this.src='images/noimage.jpg'">
+                                <img width="110px" class="media-object" src="Images/ProductImages/<%#Eval("PID") %>/<%#Eval("Name") %><%#Eval("Extention") %>" alt="<%#Eval("Name") %>" onerror="this.src='images/noimage.jpg'">
                             </a>
                         </div>
                         <div class="media-body">
@@ -28,22 +28,22 @@
                 </ItemTemplate>
             </asp:Repeater>
         </div>
-        <div class="col-md-3" runat="server" id="divPriceDetails">
+        <div class="col-md-3 pt-5" runat="server" id="divPriceDetails">
             <div style="border-bottom: 1px solid #eaeaec;">
                 <h5 class="proNameViewCart">PRICE DETAILS</h5>
                 <div>
                     <label>Cart Total</label>
-                    <span class="pull-right priceGray" id="spanCartTotal" runat="server"></span>
+                    <span class="float-right priceGray" id="spanCartTotal" runat="server"></span>
                 </div>
                 <div>
                     <label>Cart Discount</label>
-                    <span class="pull-right priceGreen" id="spanDiscount" runat="server"></span>
+                    <span class="float-right priceGreen" id="spanDiscount" runat="server"></span>
                 </div>
             </div>
             <div>
                 <div class="proPriceView">
                     <label>Total</label>
-                    <span class="pull-right" id="spanTotal" runat="server"></span>
+                    <span class="float-right" id="spanTotal" runat="server"></span>
                 </div>
                 <div>
                     <asp:Button ID="btnBuyNow" OnClick="btnBuyNow_Click" CssClass="buyNowBtn" runat="server" Text="BUY NOW" />
