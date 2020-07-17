@@ -1,41 +1,24 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="User.master.cs" Inherits="User" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="GeneralLayout.master.cs" Inherits="GeneralLayout" %>
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 <head runat="server">
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Welcome User</title>
-    <script src="js/jquery-3.2.1.min.js"></script>
-    <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet" />
     <link href="css/Custom-Cs.css" rel="stylesheet" />
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-    <script>
-        $(document).ready(function myfunction() {
-            $("#btnCart").click(function myfunction() {
-                window.location.href = "/Cart.aspx";
-            });
-        });
-    </script>
+
+    <title>TechCybo Online Shop</title>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
     <form id="form1" runat="server">
         <div>
-            <!-- Navbar -->
-
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand" href="Default.aspx">
                     <img alt="Logo" src="Images/tc only 512.png" height="30" />
                     TechCybo.com
                 </a>
@@ -55,9 +38,11 @@
                             <a class="nav-link" href="#">Contact</a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="Products.aspx" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">All Products
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">All Products
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="Products.aspx">All Products</a>
+                                <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="#">Shirts</a>
                                 <a class="dropdown-item" href="#">Pants</a>
                                 <div class="dropdown-divider"></div>
@@ -74,37 +59,36 @@
                         </button>
                     </div>
                     <ul class="navbar-nav mr-auto">
-                        <li class="nav-item" id="btnSignIn" runat="server">
-                            <asp:Button ID="Button1" runat="server" Class="btn btn-default navbar-btn" Text="Sign in" OnClick="btnSignIn_Click" />
-                        </li>
+                        <li class="nav-item" id="btnSignup" runat="server"><a class="nav-link" href="SignUp.aspx">Sign Up</a></li>
+                        <li class="nav-item" id="btnSignin" runat="server"><a class="nav-link" href="SignIn.aspx">Sign In</a></li>
                         <li class="nav-item">
                             <asp:Button ID="btnSignOut" runat="server" Class="btn btn-default nav-link" Text="Sign out" OnClick="btnSignOut_Click" />
                         </li>
                     </ul>
                 </div>
             </nav>
-            
-            <!-- Navbar End -->
-            <div class="container">
-                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-                </asp:ContentPlaceHolder>
-            </div>
+
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+
+            <footer>
+                <div class="container">
+                    <p class="float-right"><a href="#">Back to top</a></p>
+                    <p>&copy; 2015 TechCybo.com &middot; <a href="Default.aspx">Home</a> &middot; <a href="#">About</a> &middot; <a href="#">Contact</a> &middot; <a href="Products.aspx">All Products</a></p>
+                </div>
+            </footer>
+
         </div>
     </form>
-    <!--- Footer  -->
-
-    <hr />
-
-    <footer>
-        <div class="container">
-            <p class="float-right"><a href="#">Back to top</a></p>
-            <p>&copy; 2015 TechCybo.com &middot; <a href="Default.aspx">Home</a> &middot; <a href="#">About</a> &middot; <a href="#">Contact</a> &middot; <a href="#">Products</a></p>
-        </div>
-    </footer>
-
-    <!--- Footer -->
-
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script>
+        $(document).ready(function myfunction() {
+            $("#btnCart").click(function myfunction() {
+                window.location.href = "/Cart.aspx";
+            });
+        });
+    </script>
     <script src="js/bootstrap.min.js"></script>
+
 </body>
 </html>

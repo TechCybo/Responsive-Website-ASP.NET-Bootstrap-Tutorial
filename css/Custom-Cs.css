@@ -4,13 +4,8 @@
 
 .center-page {
     width: 300px;
-    height: 300px;
-    position: absolute;
-    top: -40px;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
+    margin-top: 30px;
+    margin-bottom: 10px;
 }
 
 .space-vert {
@@ -29,7 +24,7 @@
 }
 
 body {
-/*    padding-top: 50px;*/
+    /*    padding-top: 50px;*/
 }
 
 /*products.aspx*/

@@ -5,34 +5,25 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-public partial class User : System.Web.UI.MasterPage
+public partial class GeneralLayout : System.Web.UI.MasterPage
 {
     protected void Page_Load(object sender, EventArgs e)
     {
         BindCartNumber();
-
         if (Session["USERNAME"] != null)
         {
+            btnSignup.Visible = false;
+            btnSignin.Visible = false;
             btnSignOut.Visible = true;
-            btnSignIn.Visible = false;
         }
         else
         {
+            btnSignup.Visible = true;
+            btnSignin.Visible = true;
             btnSignOut.Visible = false;
-            btnSignIn.Visible = true;
         }
     }
 
-    protected void btnSignOut_Click(object sender, EventArgs e)
-    {
-        Session["USERNAME"] = null;
-        Response.Redirect("~/Default.aspx");
-    }
-
-    protected void btnSignIn_Click(object sender, EventArgs e)
-    {
-        Response.Redirect("~/SignIn.aspx");
-    }
     public void BindCartNumber()
     {
         if (Request.Cookies["CartPID"] != null)
@@ -46,5 +37,11 @@ public partial class User : System.Web.UI.MasterPage
         {
             pCount.InnerText = 0.ToString();
         }
+    }
+
+    protected void btnSignOut_Click(object sender, EventArgs e)
+    {
+        Session["USERNAME"] = null;
+        Response.Redirect("~/Default.aspx");
     }
 }
