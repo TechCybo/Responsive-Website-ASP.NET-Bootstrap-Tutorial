@@ -43,10 +43,14 @@
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="Products.aspx">All Products</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Shirts</a>
-                                <a class="dropdown-item" href="#">Pants</a>
+                                <a class="dropdown-item main-cat" href="Products.aspx?cat=3">Shirts</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Mobile Phones</a>
+                                <a class="dropdown-item" href="Products.aspx?subcat=6">Denim Shirts</a>
+                                <a class="dropdown-item" href="Products.aspx?subcat=7">Formal Shirts</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item main-cat" href="Products.aspx?cat=5">Footwear</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="Products.aspx?subcat=8">Sneakers</a>
                             </div>
                         </li>
                     </ul>

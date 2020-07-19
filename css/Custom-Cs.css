@@ -1,4 +1,11 @@
-﻿.center {
+﻿.main-cat {
+    color: #007bff;
+    text-transform: uppercase;
+    font-weight: 500;
+    padding-left: 15px;
+}
+
+.center {
     text-align: center;
 }
 

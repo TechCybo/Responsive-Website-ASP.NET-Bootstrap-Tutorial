@@ -21,11 +21,22 @@ public partial class Products : System.Web.UI.Page
     private void BindProductRepeater()
     {
         String CS = ConfigurationManager.ConnectionStrings["MyDatabaseConnectionString1"].ConnectionString;
+        Int64 CatId = Request.QueryString["cat"] == null ? 0 : Convert.ToInt64(Request.QueryString["cat"]);
+        Int64 SubCatId = Request.QueryString["subcat"] == null ? 0 : Convert.ToInt64(Request.QueryString["subcat"]);
+
         using (SqlConnection con = new SqlConnection(CS))
         {
             using (SqlCommand cmd = new SqlCommand("procBindAllProducts", con))
             {
                 cmd.CommandType = CommandType.StoredProcedure;
+                if (CatId > 0)
+                {
+                    cmd.Parameters.AddWithValue("@PCategoryID", CatId);
+                }
+                if (SubCatId > 0)
+                {
+                    cmd.Parameters.AddWithValue("@PSubCatID", SubCatId);
+                }
                 using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
                 {
                     DataTable dtBrands = new DataTable();
