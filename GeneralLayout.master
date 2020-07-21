@@ -43,14 +43,23 @@
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="Products.aspx">All Products</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item main-cat" href="Products.aspx?cat=3">Shirts</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="Products.aspx?subcat=6">Denim Shirts</a>
-                                <a class="dropdown-item" href="Products.aspx?subcat=7">Formal Shirts</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item main-cat" href="Products.aspx?cat=5">Footwear</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="Products.aspx?subcat=8">Sneakers</a>
+
+                                <asp:Repeater ID="rptCategory" runat="server" OnItemDataBound="OnItemDataBound">
+                                    <ItemTemplate>
+                                        <a class="dropdown-item main-cat" href="Products.aspx?cat=<%# Eval("CatID") %>"><%# Eval("CatName") %></a>
+                                        <asp:HiddenField ID="hfCatId" runat="server" Value='<%# Eval("CatID") %>' />
+
+                                        <asp:Repeater ID="rptSubCategories" runat="server">
+                                            <ItemTemplate>
+                                                <a class="dropdown-item" href="Products.aspx?subcat=<%# Eval("SubCatID") %>"><%# Eval("SubCatName") %></a>
+                                            </ItemTemplate>
+                                            <FooterTemplate>
+                                                <div class="dropdown-divider"></div>
+                                            </FooterTemplate>
+                                        </asp:Repeater>
+
+                                    </ItemTemplate>
+                                </asp:Repeater>
                             </div>
                         </li>
                     </ul>
